@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@500;600;700&display=swap');
+@import './theme.css';
+
+@layer base {
+  :root {
+    color-scheme: dark;
+    background-color: hsl(var(--background));
+  }
+
+  body {
+    min-height: 100vh;
+    margin: 0;
+    background-color: hsl(var(--background));
+    background-image: var(--gradient-surface);
+    color: hsl(var(--foreground));
+    font-family: var(--font-sans);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-heading);
+  }
+
+  .skip-link {
+    position: absolute;
+    top: -100%;
+    left: 1rem;
+    z-index: 1000;
+    padding: 0.75rem 1.25rem;
+    border-radius: 9999px;
+    border: 1px solid hsl(var(--foreground));
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: top 0.2s ease;
+  }
+
+  .skip-link:focus-visible {
+    top: 1rem;
+  }
+}
