@@ -20,7 +20,7 @@ import {
 
 export default function HomePage() {
   const baseUrl = import.meta.env.BASE_URL ?? '/'
-  const faviconHref = `${baseUrl}vite.svg`
+  const faviconHref = `${baseUrl}logo-icon.png`
 
   return (
     <>
@@ -30,7 +30,7 @@ export default function HomePage() {
         <meta name="application-name" content={SITE_NAME} />
         <meta name="theme-color" content="#0f172a" />
         <link rel="canonical" href={SITE_URL} />
-        <link rel="icon" type="image/svg+xml" href={faviconHref} />
+        <link rel="icon" type="image/png" href={faviconHref} />
 
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content={SITE_NAME} />
