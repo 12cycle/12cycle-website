@@ -1,73 +1,39 @@
-# React + TypeScript + Vite
+# 12Cycle Site
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+12Cycle Site is a marketing and product presence built with React, TypeScript, and Vite. The project embraces a component-driven architecture and ships with Tailwind CSS, motion effects, routing, and testing utilities ready for customization.
 
-Currently, two official plugins are available:
+## Tech Stack
+- React 18 with Vite for rapid development
+- TypeScript with strict configuration
+- Tailwind CSS and shadcn/ui for styling
+- React Router and React Helmet for routing and metadata
+- Vitest and Testing Library for unit tests
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Getting Started
+1. Install dependencies: `npm install`
+2. Run the development server with hot reloading: `npm run dev`
+3. Build the production bundle: `npm run build`
 
-## React Compiler
+Keep the development terminal visible to monitor warnings from Vite and TypeScript.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Available Scripts
+- `npm run dev`: Start the Vite development server.
+- `npm run build`: Type-check and build the production bundle into `dist/`.
+- `npm run preview`: Serve the production bundle locally for smoke testing.
+- `npm run lint`: Run ESLint using the project configuration.
+- `npm run lint:fix`: Apply auto-fixes for lint warnings.
+- `npm run test`: Execute the Vitest suite in watch mode.
+- `npm run test:run`: Run the Vitest suite once in CI mode.
+- `npm run format` / `npm run format:check`: Format the codebase with Prettier or verify formatting.
 
-## Expanding the ESLint configuration
+## Project Structure
+- `src/`: Application source organized by feature domains.
+- `public/`: Static assets served as-is by Vite.
+- `src/assets/`: Images and icons imported through the module graph.
+- `index.html`: SPA bootstrap file.
+- `docs/`: Additional design and reference materials.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+`main.tsx` connects React to the DOM, while `App.tsx` stays lightweight and delegates features to domain modules. Prefer functional components, extract reusable UI, and follow the linting guidance described in `eslint.config.js`.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## License
+This project is licensed under an All Rights Reserved license. See `LICENSE` for details.

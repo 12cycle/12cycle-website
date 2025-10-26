@@ -12,6 +12,22 @@ type ObserverInstance = {
 
 const originalObserver = globalThis.IntersectionObserver
 
+function createIntersectionObserverEntry(
+  element: Element,
+  isIntersecting: boolean,
+): IntersectionObserverEntry {
+  const rect = element.getBoundingClientRect()
+  return {
+    boundingClientRect: rect,
+    intersectionRatio: isIntersecting ? 1 : 0,
+    intersectionRect: rect,
+    isIntersecting,
+    rootBounds: null,
+    target: element,
+    time: Date.now(),
+  }
+}
+
 function setupIntersectionObserverMock(instances: ObserverInstance[]) {
   class MockIntersectionObserver {
     observe = vi.fn()
@@ -72,7 +88,7 @@ describe('useSectionInView', () => {
 
     await act(async () => {
       instance.trigger([
-        { target: target!, isIntersecting: true } as IntersectionObserverEntry,
+        createIntersectionObserverEntry(target!, true),
       ])
     })
 

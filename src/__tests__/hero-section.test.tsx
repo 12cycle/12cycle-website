@@ -16,7 +16,8 @@ function renderWithScrollContext(ui: ReactNode) {
 afterEach(() => {
   const descriptor = Object.getOwnPropertyDescriptor(globalThis.navigator, 'clipboard')
   if (descriptor && descriptor.configurable) {
-    delete (globalThis.navigator as Record<string, unknown>).clipboard
+    const navigatorWithClipboard = globalThis.navigator as { clipboard?: Pick<Clipboard, 'writeText'> }
+    delete navigatorWithClipboard.clipboard
   }
   vi.restoreAllMocks()
 })
@@ -39,8 +40,12 @@ describe('HeroSection', () => {
 
   it('copies contract address and shows toast', async () => {
     const user = userEvent.setup()
-    const writeText = vi.fn().mockResolvedValue(undefined)
-    Object.defineProperty(globalThis.navigator, 'clipboard', {
+    const writeText = vi.fn<(text: string) => Promise<void>>().mockResolvedValue(undefined)
+    const navigatorWithClipboard = globalThis.navigator as {
+      clipboard?: Pick<Clipboard, 'writeText'>
+    }
+
+    Object.defineProperty(navigatorWithClipboard, 'clipboard', {
       configurable: true,
       value: {
         writeText,

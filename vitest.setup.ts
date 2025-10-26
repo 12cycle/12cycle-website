@@ -1,12 +1,19 @@
-import '@testing-library/jest-dom'
+import '@testing-library/jest-dom/vitest'
 
 class IntersectionObserverMock {
   constructor(private readonly callback: IntersectionObserverCallback) {}
   observe(element: Element) {
-    this.callback(
-      [{ isIntersecting: true, target: element } as IntersectionObserverEntry],
-      this as unknown as IntersectionObserver,
-    )
+    const rect = element.getBoundingClientRect()
+    const entry: IntersectionObserverEntry = {
+      boundingClientRect: rect,
+      intersectionRatio: 1,
+      intersectionRect: rect,
+      isIntersecting: true,
+      rootBounds: null,
+      target: element,
+      time: Date.now(),
+    }
+    this.callback([entry], this as unknown as IntersectionObserver)
   }
   unobserve() {}
   disconnect() {}
