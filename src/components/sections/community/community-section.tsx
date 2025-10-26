@@ -37,21 +37,25 @@ export function CommunitySection() {
   }, [])
 
   useEffect(() => {
-    const existingScript = document.querySelector('script#twitter-wjs')
-
-    if (existingScript) {
+    const twitterWindow = window as TwitterWindow
+    if (twitterWindow.twttr) {
       setStatus('loaded')
       return
     }
 
-    const script = document.createElement('script')
-    script.id = 'twitter-wjs'
-    script.async = true
-    script.src = '/scripts/twitter-widget.js'
-    document.body.appendChild(script)
+    const existingWidgetsScript = document.querySelector('script#twitter-wjs')
+    if (existingWidgetsScript) {
+      return
+    }
+
+    const loaderScript = document.createElement('script')
+    loaderScript.id = 'twitter-widget-loader'
+    loaderScript.async = true
+    loaderScript.src = '/scripts/twitter-widget.js'
+    document.body.appendChild(loaderScript)
 
     return () => {
-      script.remove()
+      loaderScript.remove()
     }
   }, [])
 
