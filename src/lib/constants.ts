@@ -10,6 +10,7 @@ import type {
 } from './types'
 
 export const SITE_NAME = '12Cycle'
+export const SITE_TITLE = '12Cycle (12C)'
 export const TOKEN_SYMBOL = '12C'
 export const CONTRACT_ADDRESS = '0xac9aa6f04494e08cb182f2a56b9ceae9b9154444'
 export const CHAIN_NAME = 'BNB Chain'

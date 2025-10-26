@@ -14,6 +14,7 @@ import {
   OG_IMAGE_URL,
   SITE_DESCRIPTION,
   SITE_NAME,
+  SITE_TITLE,
   SITE_URL,
   TWITTER_HANDLE,
 } from '@/lib/constants'
@@ -21,20 +22,21 @@ import {
 export default function HomePage() {
   const baseUrl = import.meta.env.BASE_URL ?? '/'
   const faviconHref = `${baseUrl}logo-icon.png`
+  const pageTitle = `${SITE_TITLE} | Liquidity in Motion`
 
   return (
     <>
       <Helmet>
-        <title>{`${SITE_NAME} | Liquidity in Motion`}</title>
+        <title>{pageTitle}</title>
         <meta name="description" content={SITE_DESCRIPTION} />
-        <meta name="application-name" content={SITE_NAME} />
+        <meta name="application-name" content={SITE_TITLE} />
         <meta name="theme-color" content="#0f172a" />
         <link rel="canonical" href={SITE_URL} />
         <link rel="icon" type="image/png" href={faviconHref} />
 
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content={SITE_NAME} />
-        <meta property="og:title" content={`${SITE_NAME} | Liquidity in Motion`} />
+        <meta property="og:title" content={pageTitle} />
         <meta property="og:description" content={SITE_DESCRIPTION} />
         <meta property="og:url" content={SITE_URL} />
         <meta property="og:image" content={OG_IMAGE_URL} />
@@ -45,7 +47,7 @@ export default function HomePage() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:creator" content={TWITTER_HANDLE} />
         <meta name="twitter:site" content={TWITTER_HANDLE} />
-        <meta name="twitter:title" content={`${SITE_NAME} | Liquidity in Motion`} />
+        <meta name="twitter:title" content={pageTitle} />
         <meta name="twitter:description" content={SITE_DESCRIPTION} />
         <meta name="twitter:image" content={OG_IMAGE_URL} />
       </Helmet>
