@@ -14,10 +14,10 @@ export const TOKEN_SYMBOL = '12C'
 export const CONTRACT_ADDRESS = '0xac9aa6f04494e08cb182f2a56b9ceae9b9154444'
 export const CHAIN_NAME = 'BNB Chain'
 export const TOTAL_SUPPLY = 1_000_000_000
-export const SITE_URL = 'https://12cycle-site.web.app'
+export const SITE_URL = 'https://12cycle.github.io/12cycle-website/'
 export const SITE_DESCRIPTION =
   '12Cycle is expanding the on-chain liquidity loop with cinematic storytelling, live liquidity telemetry, and community-first tokenomics.'
-export const OG_IMAGE_URL = `${SITE_URL}/og-image.png`
+export const OG_IMAGE_URL = `${SITE_URL}og-image.png`
 export const TWITTER_HANDLE = '@12C_World'
 
 export const EXTERNAL_LINKS: Record<ExternalLinkId, ExternalLink> = {
