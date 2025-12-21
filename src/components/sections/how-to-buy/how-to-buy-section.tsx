@@ -33,20 +33,20 @@ export function HowToBuySection() {
 
   return (
     <SectionContainer
-      id="how-to-buy"
+      id="poc-flow"
       wrapperClassName="py-24 sm:py-32"
       className="space-y-12"
     >
       <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
         <span className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-primary/80">
-          How to Buy
+          Proof of Culture Flow
         </span>
         <h2 className="mt-5 text-balance text-3xl font-semibold text-white sm:text-4xl">
-          Four quick steps to join the {SITE_NAME} loop
+          Four whitepaper-defined steps to unlock the {SITE_NAME} orbit
         </h2>
         <p className="mt-5 text-base text-slate-300 sm:text-lg">
-          Follow this guided path to secure {TOKEN_SYMBOL}, start cycling liquidity, and
-          stay in sync with our roadmap milestones.
+          Follow this guided path to move from fair launch participation to Soulbound
+          identity, PoC quests, and reputation-weighted governance for {TOKEN_SYMBOL}.
         </p>
       </div>
 

@@ -7,6 +7,9 @@ import type {
   TokenAllocation,
   HowToBuyStep,
   RoadmapStage,
+  TeamRole,
+  Partner,
+  LegalSection,
 } from './types'
 
 export const SITE_NAME = '12Cycle'
@@ -17,7 +20,7 @@ export const CHAIN_NAME = 'BNB Chain'
 export const TOTAL_SUPPLY = 1_000_000_000
 export const SITE_URL = 'https://12cycle.github.io/12cycle-website/'
 export const SITE_DESCRIPTION =
-  '12Cycle is expanding the on-chain liquidity loop with cinematic storytelling, live liquidity telemetry, and community-first tokenomics.'
+  '12Cycle fuses Eastern and Western zodiac wisdom into a Proof of Culture protocol—minting soulbound destiny profiles, rewarding cultural contributions, and funding a fair-launch ecosystem on BNB Chain.'
 export const OG_IMAGE_URL = `${SITE_URL}og-image.png`
 export const TWITTER_HANDLE = '@12C_World'
 
@@ -46,6 +49,12 @@ export const EXTERNAL_LINKS: Record<ExternalLinkId, ExternalLink> = {
     href: 'https://pancakeswap.finance/swap',
     description: 'Swap tokens on PancakeSwap',
   },
+  whitepaper: {
+    id: 'whitepaper',
+    label: 'Whitepaper',
+    href: 'https://12cycle-world-whitepaper.gitbook.io/12cycle.world.whitepaper-docs/',
+    description: 'Explore the full 12C ecosystem narrative',
+  },
 }
 
 export const SOCIAL_LINKS: SocialLink[] = [
@@ -62,187 +71,324 @@ export const SOCIAL_LINKS: SocialLink[] = [
     href: EXTERNAL_LINKS.fourMeme.href,
     description: EXTERNAL_LINKS.fourMeme.description,
   },
+  {
+    id: 'whitepaper',
+    label: 'Whitepaper',
+    href: EXTERNAL_LINKS.whitepaper.href,
+    description: EXTERNAL_LINKS.whitepaper.description,
+  },
 ]
 
 export const NAV_SECTIONS: SectionMeta[] = [
   { id: 'hero', label: 'Overview', href: '#hero' },
-  { id: 'stats', label: 'Key Stats', href: '#stats' },
-  { id: 'about', label: 'About', href: '#about' },
-  { id: 'tokenomics', label: 'Tokenomics', href: '#tokenomics' },
-  { id: 'how-to-buy', label: 'How to Buy', href: '#how-to-buy' },
+  { id: 'stats', label: 'Signals', href: '#stats' },
+  { id: 'ecosystem', label: 'Ecosystem', href: '#ecosystem' },
+  { id: 'architecture', label: 'Architecture', href: '#architecture' },
+  { id: 'tokenomics', label: 'Token Economy', href: '#tokenomics' },
   { id: 'chart', label: 'Chart', href: '#chart' },
-  { id: 'community', label: 'Community', href: '#community' },
+  { id: 'poc-flow', label: 'PoC Flow', href: '#poc-flow' },
+  { id: 'governance', label: 'Governance', href: '#governance' },
   { id: 'roadmap', label: 'Roadmap', href: '#roadmap' },
+  { id: 'team', label: 'Team', href: '#team' },
+  { id: 'legal', label: 'Legal', href: '#legal' },
 ]
 
 export const KEY_STATS: StatCard[] = [
   {
-    id: 'chain',
-    label: 'Primary Chain',
-    value: CHAIN_NAME,
+    id: 'identity',
+    label: 'Identity Standard',
+    value: 'SBT-12C',
     description:
-      'Optimized for low fees and fast transactions, ideal for on-chain loops.',
+      'Soulbound destiny profiles inscribe Saju and astrology data on BNB Chain, locking each cultural fingerprint.',
   },
   {
-    id: 'liquidity',
-    label: 'Liquidity Pools',
-    value: 'Coming Soon',
+    id: 'destiny',
+    label: 'Destiny Engine',
+    value: 'Proof of Culture',
     description:
-      'Live pool data will be surfaced as the protocol activates cross-cycle swaps.',
-    href: EXTERNAL_LINKS.dexscreener.href,
-    hrefLabel: 'Track on Dexscreener',
+      'AI blends Eastern and Western zodiac models to measure resonance and convert human connections into rewards.',
   },
   {
-    id: 'supply',
-    label: 'Token Supply',
-    value: TOTAL_SUPPLY.toLocaleString('en-US'),
+    id: 'launch',
+    label: 'Launch Stack',
+    value: '4Meme Fair Launch',
     description:
-      'Fixed supply powering the 12-cycle distribution. Detailed tokenomics arriving shortly.',
-  },
-  {
-    id: 'security',
-    label: 'Contract Integrity',
-    value: 'Audits Pending',
-    description:
-      'Independent security partners are reviewing the core loop contracts before mainnet launch.',
+      'Transparent bonding-curve liquidity formation prevents private allocations and keeps emissions community-first.',
     href: EXTERNAL_LINKS.fourMeme.href,
-    hrefLabel: 'View Contract Details',
+    hrefLabel: 'View 4Meme Listing',
+  },
+  {
+    id: 'governance',
+    label: 'Governance',
+    value: 'The Grand Council',
+    description:
+      'Hybrid voting weights 12C tokens with PoC reputation so creators, matchmakers, and guardians steer upgrades.',
   },
 ]
 
 export const TOKEN_ALLOCATION: TokenAllocation[] = [
   {
     id: 'liquidity',
-    label: 'Liquidity + DEX Pairing',
-    value: 38,
-    description: 'Reserved to seed deep liquidity across the initial 12-cycle pools.',
-    color: '#38bdf8',
-    accentClass: 'from-sky-400/70 to-sky-500/40',
+    label: 'Liquidity Provision (LP)',
+    value: 25,
+    description:
+      'Core liquidity for the 4Meme bonding curve and upcoming PancakeSwap pools.',
+    color: '#22d3ee',
+    accentClass: 'from-cyan-400/70 to-sky-500/40',
+  },
+  {
+    id: 'public-launch',
+    label: 'Public Launch (4Meme)',
+    value: 25,
+    description:
+      'Fair Launch tranche that keeps every participant on equal footing with no private rounds.',
+    color: '#a855f7',
+    accentClass: 'from-fuchsia-500/70 to-violet-500/40',
+  },
+  {
+    id: 'poc',
+    label: 'Proof of Culture (PoC)',
+    value: 15,
+    description:
+      'Rewards for cultural quests, compatibility missions, and offline meetups recorded on-chain.',
+    color: '#34d399',
+    accentClass: 'from-emerald-400/70 to-lime-400/40',
   },
   {
     id: 'ecosystem',
-    label: 'Ecosystem Growth',
-    value: 22,
-    description: 'Partnerships, marketing beats, and community initiatives.',
-    color: '#c084fc',
-    accentClass: 'from-fuchsia-400/70 to-fuchsia-500/40',
-  },
-  {
-    id: 'rewards',
-    label: 'Cycle Rewards',
-    value: 18,
-    description: 'Incentives for active loop participants staking and compounding.',
-    color: '#34d399',
-    accentClass: 'from-emerald-400/70 to-emerald-500/40',
-  },
-  {
-    id: 'treasury',
-    label: 'Protocol Treasury',
-    value: 12,
-    description: 'Multi-sig governed reserve supporting audits, tooling, and R&D.',
-    color: '#60a5fa',
-    accentClass: 'from-blue-400/70 to-blue-500/40',
+    label: 'Ecosystem & Marketing',
+    value: 15,
+    description: 'Partnerships, creator licensing, and global IP expansion.',
+    color: '#f472b6',
+    accentClass: 'from-rose-400/70 to-pink-500/40',
   },
   {
     id: 'team',
-    label: 'Core Contributors',
+    label: 'Team & Development',
     value: 10,
-    description: 'Vested issuance aligning builders with the long-term 12Cycle vision.',
-    color: '#8b5cf6',
-    accentClass: 'from-violet-400/70 to-violet-500/40',
+    description: 'Core contributors scaling the AI engine, AR interface, and compliance stack.',
+    color: '#60a5fa',
+    accentClass: 'from-blue-400/70 to-indigo-500/40',
+  },
+  {
+    id: 'treasury',
+    label: 'Treasury & Reserve',
+    value: 10,
+    description: 'Grand Council-managed reserves for governance votes and emergency runway.',
+    color: '#facc15',
+    accentClass: 'from-amber-300/70 to-amber-500/40',
   },
 ]
 
 export const HOW_TO_BUY_STEPS: HowToBuyStep[] = [
   {
-    id: 'wallet',
-    title: 'Set up your wallet',
+    id: 'launch',
+    title: 'Join the 4Meme Fair Launch',
     description:
-      'Install a Web3 wallet like MetaMask or Rabby, configure it for the BNB Chain network, and secure your seed phrase.',
-    icon: 'wallet',
-    highlight: 'BNB Chain RPC ready',
-  },
-  {
-    id: 'fund',
-    title: 'Fund with BNB',
-    description:
-      'Bridge or transfer BNB into your wallet to cover {TOKEN_SYMBOL} swaps and gas fees along the 12Cycle pools.',
+      'Secure {TOKEN_SYMBOL} directly from the transparent bonding curve. Everyone shares the same entry price—no insider rounds or unlock cliffs.',
     icon: 'coins',
-    highlight: 'Keep a buffer for gas',
+    highlight: 'Equal access for all',
+    href: EXTERNAL_LINKS.fourMeme.href,
+    hrefLabel: 'Open 4Meme',
   },
   {
-    id: 'swap',
-    title: 'Swap on PancakeSwap',
+    id: 'mint',
+    title: 'Mint your destiny profile',
     description:
-      'Visit the official PancakeSwap pair, connect your wallet, and trade BNB for {TOKEN_SYMBOL}. Confirm slippage settings before executing.',
+      'Input your Saju (Four Pillars) and astrological data to mint the SBT-12C identity on BNB Chain. This soulbound token anchors every Proof of Culture action.',
+    icon: 'wallet',
+    highlight: 'Soulbound identity ready',
+  },
+  {
+    id: 'resonate',
+    title: 'Trigger Proof of Culture',
+    description:
+      'Complete cultural quests, host meetups, or match compatible guardians. AI calculates resonance and streams PoC rewards back to your destiny profile.',
     icon: 'swap',
-    highlight: 'Use the verified contract',
-    href: EXTERNAL_LINKS.pancakeswap.href,
-    hrefLabel: 'Open PancakeSwap',
+    highlight: 'Earn PoC multipliers',
   },
   {
-    id: 'track',
-    title: 'Track your position',
+    id: 'council',
+    title: 'Claim your council seat',
     description:
-      'Add the token contract to your wallet, monitor liquidity on Dexscreener, and join the {SITE_NAME} community for cycle updates.',
+      'Stake your reputation in The Grand Council, where PoC multipliers boost your vote on emissions, treasury strategy, and new lore drops for {SITE_NAME}.',
     icon: 'radar',
-    highlight: 'Stay in sync with loops',
-    href: EXTERNAL_LINKS.dexscreener.href,
-    hrefLabel: 'View live chart',
+    highlight: 'Reputation-weighted votes',
+    href: EXTERNAL_LINKS.whitepaper.href,
+    hrefLabel: 'Read governance charter',
   },
 ]
 
 export const ROADMAP_STAGES: RoadmapStage[] = [
   {
-    id: 'phase-0',
-    title: 'Genesis Loop Calibration',
-    description:
-      'Architect protocol scaffolding, align launch partners, and validate the multi-cycle flow with a seeded beta community.',
-    quarter: 'Q1 2025',
-    status: 'completed',
-    items: [
-      'Launch brand identity and single-page teaser',
-      'Deploy base smart contracts to testnet',
-      'Recruit initial community validators and liquidity partners',
-    ],
-  },
-  {
     id: 'phase-1',
-    title: 'Cycle Launch & Liquidity Sync',
+    title: 'Genesis & Fair Launch',
     description:
-      'Initiate the first 12-cycle loop, onboard market makers, and surface live telemetry to the public dashboard.',
-    quarter: 'Q2 2025',
+      'Translate lore into on-chain value by launching 12C via 4Meme and bootstrapping the first liquidity anchors.',
+    quarter: 'Q4 2025',
     status: 'in-progress',
     items: [
-      'Deploy liquidity pools and bonding curves to mainnet',
-      'Open staking and reward distribution portal',
-      'Release live chart integrations and on-chain analytics',
+      'Execute the public 4Meme Fair Launch with transparent bonding-curve pricing.',
+      'Recruit Genesis contributors and host global lore reveals for the 12 Zodiac Guardians.',
+      'Migrate bonded liquidity to PancakeSwap once curve targets are met.',
     ],
   },
   {
     id: 'phase-2',
-    title: 'Ecosystem Amplification',
+    title: 'Ecosystem Expansion & DApp Launch',
     description:
-      'Layer in partner apps, automate cross-cycle routing, and scale community governance as volume accelerates.',
-    quarter: 'Q3 2025',
+      'Ship the 12C Compass dApp, SocialFi flows, and creator tooling so every contribution becomes Proof of Culture data.',
+    quarter: '2026',
     status: 'upcoming',
     items: [
-      'Launch partner integrations with DEX tooling',
-      'Ship governance portal and quadratic voting flows',
-      'Roll out advanced routing strategies for compounding loops',
+      'Launch the 12C Compass app for destiny minting and live compatibility guidance.',
+      'Activate Connect-to-Earn SocialFi quests plus the 12 Zodiac Guardian character IP.',
+      'Open the creator program and NFT marketplace for lore-driven content.',
     ],
   },
   {
     id: 'phase-3',
-    title: 'Global Expansion & Data Streams',
+    title: 'Meta-Culture & Future Tech Integration',
     description:
-      'Expand cross-chain pathways, expose data APIs, and prepare for real-world onramps into 12Cycle liquidity.',
-    quarter: 'Q4 2025',
+      'Blend AR, gaming, and real-world meetups so destiny data powers daily experiences.',
+    quarter: '2027',
     status: 'upcoming',
     items: [
-      'Bridge to secondary chains and L2 ecosystems',
-      'Launch public analytics API and data sandbox',
-      'Integrate fiat onramps and institutional liquidity providers',
+      'Ship The Destiny Chronicles meta-game with stats derived from on-chain Saju.',
+      'Release the Destiny Vision smart-glass interface for real-time compatibility cues.',
+      'Host AR-powered global meetup tours that merge online and offline resonance.',
+    ],
+  },
+  {
+    id: 'phase-4',
+    title: 'The 12C Universe',
+    description:
+      'Scale toward a universal Proof of Culture oracle, powering governance, AR gaming, and cultural finance worldwide.',
+    quarter: '2028+',
+    status: 'upcoming',
+    items: [
+      'Finalize full DAO control of emissions, treasury, and lore canon.',
+      'Expand AR location-based experiences with guardian collections worldwide.',
+      'Extend the destiny oracle API into partner apps and Web2 cultural platforms.',
+    ],
+  },
+]
+
+export const CORE_TEAM_ROLES: TeamRole[] = [
+  {
+    id: 'ceo',
+    title: 'CEO — Vision Orchestrator',
+    description:
+      'Bridges ancient destiny lore with Web3 market strategy to keep the 12C universe cohesive.',
+  },
+  {
+    id: 'cto',
+    title: 'CTO — Destiny Protocol Lead',
+    description:
+      'Architects the BNB Chain stack, AI compatibility engine, and AR integrations that power Proof of Culture.',
+  },
+  {
+    id: 'cco',
+    title: 'CCO — Cultural Creative Officer',
+    description:
+      'Expands the 12 Zodiac Guardian IP through comics, animation, and partner media.',
+  },
+  {
+    id: 'cmo',
+    title: 'CMO — SocialFi Catalyst',
+    description:
+      'Activates the global community, aligning SocialFi incentives with fair launch principles.',
+  },
+  {
+    id: 'cgo',
+    title: 'CGO — Game & Economy Architect',
+    description:
+      'Designs the destiny-driven game loops and sustainable rewards behind the Play-to-Prosper vision.',
+  },
+]
+
+export const STRATEGIC_PARTNERS: Partner[] = [
+  {
+    id: 'bnb',
+    label: 'BNB Chain',
+    description:
+      'Provides the low-fee, high-throughput infrastructure that keeps destiny inscriptions affordable worldwide.',
+  },
+  {
+    id: 'fourmeme',
+    label: '4Meme',
+    description: `Hosts the fair launch bonding curve so the community controls the initial discovery of ${TOKEN_SYMBOL}.`,
+  },
+  {
+    id: 'pancakeswap',
+    label: 'PancakeSwap',
+    description:
+      'Enables deep secondary liquidity once the bonding curve target transfers into public pools.',
+  },
+  {
+    id: 'ar-tech',
+    label: 'AR-Tech Alliances',
+    description:
+      'Smart-glass partners powering the Destiny Vision interface for real-time compatibility overlays.',
+  },
+  {
+    id: 'content-hubs',
+    label: 'Global Content Hubs',
+    description:
+      'Studios and merchandise partners that bring the 12 Zodiac Guardians to mainstream culture.',
+  },
+]
+
+export const LEGAL_SECTIONS: LegalSection[] = [
+  {
+    id: 'general',
+    title: 'General Disclaimer',
+    items: [
+      '12C is a utility token for the Proof of Culture ecosystem and is not a security or investment contract.',
+      'Nothing on this site constitutes financial, legal, or tax advice. Consult professionals before participating.',
+    ],
+  },
+  {
+    id: 'forward-looking',
+    title: 'No Guarantees & Forward-Looking Statements',
+    items: [
+      'Token value, liquidity, and exchange listings are not guaranteed and may change with market conditions.',
+      'Roadmap milestones depend on technical and regulatory factors; timelines may shift without notice.',
+    ],
+  },
+  {
+    id: 'restricted',
+    title: 'Restricted Jurisdictions',
+    items: [
+      'Residents of regions that ban or heavily restrict crypto participation—including the USA, China, and sanctioned countries—must not interact with the token.',
+      'Participants are solely responsible for complying with applicable local laws and regulations.',
+    ],
+  },
+]
+
+export const RISK_SECTIONS: LegalSection[] = [
+  {
+    id: 'market',
+    title: 'Market & Liquidity Risk',
+    items: [
+      'Bonding-curve launches can experience sharp volatility, and secondary market liquidity is not guaranteed.',
+      'Liquidity migration to exchanges such as PancakeSwap depends on reaching curve targets and community demand.',
+    ],
+  },
+  {
+    id: 'technical',
+    title: 'Technical & Platform Risk',
+    items: [
+      'Smart contracts may contain undiscovered vulnerabilities even after audits and community review.',
+      'BNB Chain congestion, forks, or outages can disrupt minting, governance, and reward distribution.',
+    ],
+  },
+  {
+    id: 'regulatory',
+    title: 'Regulatory & Legal Risk',
+    items: [
+      'Shifts in digital asset regulation could limit or prohibit aspects of the 12C ecosystem.',
+      'Users bear full responsibility for monitoring compliance obligations in their jurisdiction.',
     ],
   },
 ]

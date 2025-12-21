@@ -2,12 +2,15 @@ import { Helmet } from 'react-helmet-async'
 import { Footer, Header } from '@/components/layout'
 import {
   AboutSection,
+  ArchitectureSection,
   ChartSection,
-  CommunitySection,
+  GovernanceSection,
   HeroSection,
   HowToBuySection,
   KeyStatsSection,
+  LegalSection,
   RoadmapSection,
+  TeamSection,
   TokenomicsSection,
 } from '@/components/sections'
 import {
@@ -22,7 +25,7 @@ import {
 export default function HomePage() {
   const baseUrl = import.meta.env.BASE_URL ?? '/'
   const faviconHref = `${baseUrl}logo-icon.png`
-  const pageTitle = `${SITE_TITLE} | Liquidity in Motion`
+  const pageTitle = `${SITE_TITLE} | Proof of Culture`
 
   return (
     <>
@@ -59,11 +62,14 @@ export default function HomePage() {
           <HeroSection />
           <KeyStatsSection />
           <AboutSection />
+          <ArchitectureSection />
           <TokenomicsSection />
-          <HowToBuySection />
           <ChartSection />
-          <CommunitySection />
+          <HowToBuySection />
+          <GovernanceSection />
           <RoadmapSection />
+          <TeamSection />
+          <LegalSection />
         </main>
 
         <Footer />

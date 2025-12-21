@@ -6,19 +6,19 @@ import { SITE_NAME, TOKEN_SYMBOL } from '@/lib/constants'
 
 const CYCLE_FACETS = [
   {
-    id: 'liquidity',
-    title: 'Sustained Liquidity',
-    copy: 'Capital rotates through curated pools to maintain depth and reduce slippage across every cycle.',
+    id: 'destiny',
+    title: 'Destiny Data Layer',
+    copy: 'AI analyzes Saju and astrology data to create a cross-cultural compatibility graph that lives on-chain.',
   },
   {
-    id: 'community',
-    title: 'Community Amplified',
-    copy: 'Token holders govern the flow of each loop, balancing growth incentives with risk oversight.',
+    id: 'identity',
+    title: 'Soulbound Profile',
+    copy: 'Your SBT-12C “destiny passport” is non-transferable, capturing contributions, resonance scores, and guardian roles.',
   },
   {
-    id: 'automation',
-    title: 'Automation Ready',
-    copy: 'Smart routing unlocks programmatic compounding while preserving transparency for auditors and analysts.',
+    id: 'seasons',
+    title: 'Celestial Incentives',
+    copy: '24 Solar Terms, planetary events, and Zodiac Wars boost Proof of Culture rewards during key cultural seasons.',
   },
 ] as const
 
@@ -26,7 +26,11 @@ export function AboutSection() {
   const prefersReducedMotion = useReducedMotion()
 
   return (
-    <SectionContainer id="about" wrapperClassName="py-24 sm:py-32" className="space-y-12">
+    <SectionContainer
+      id="ecosystem"
+      wrapperClassName="py-24 sm:py-32"
+      className="space-y-12"
+    >
       <PageGrid>
         <motion.div
           className="md:col-span-5"
@@ -38,16 +42,15 @@ export function AboutSection() {
           }
         >
           <p className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-primary/80">
-            About the Loop
+            Proof of Culture
           </p>
           <h2 className="mt-5 text-balance text-3xl font-semibold text-white sm:text-4xl">
-            A 12-phase engine for liquidity in constant motion
+            The ecosystem converts cultural resonance into value
           </h2>
           <p className="mt-5 text-base text-slate-300 sm:text-lg">
-            {SITE_NAME} choreographs a closed loop of curated pools, incentivized actors,
-            and real-time telemetry. The result is a rhythm that keeps {TOKEN_SYMBOL}{' '}
-            circulating through deep liquidity while steadily rewarding the community that
-            powers it.
+            {SITE_NAME} extends the 12 Zodiac mythos with AI, SBTs, and incentive seasons.
+            Every introduction, creation, and meetup becomes Proof of Culture that fuels
+            the {TOKEN_SYMBOL} economy and unlocks exclusive lore drops.
           </p>
 
           <div className="mt-8 flex flex-col gap-4">
@@ -86,25 +89,25 @@ export function AboutSection() {
 
             <div className="relative z-10 flex flex-col items-center text-center text-slate-200">
               <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-slate-900/60 px-4 py-1 text-xs font-medium uppercase tracking-[0.3em] text-primary">
-                Cycle Diagram
+                Destiny Stack
               </span>
-              <h3 className="mt-4 text-2xl font-semibold text-white">12 Nodes</h3>
+              <h3 className="mt-4 text-2xl font-semibold text-white">3 Interlocking Layers</h3>
               <p className="mt-3 max-w-[16rem] text-sm text-slate-300">
-                Liquidity, incentives, and governance flow through repeating phases to
-                maintain momentum.
+                Identity (SBT), Liquidity (4Meme &amp; DEX), and Logic (AI matching) sync
+                to mint verifiable Proof of Culture.
               </p>
 
               <div className="mt-8 flex flex-wrap items-center justify-center gap-2 text-xs uppercase tracking-[0.3em] text-primary/80">
                 <span className="inline-flex items-center gap-1 rounded-full border border-primary/30 bg-primary/10 px-3 py-1">
                   <Sparkles className="h-3 w-3" aria-hidden="true" />
-                  Deploy
+                  SBT-12C
                 </span>
                 <span className="inline-flex items-center gap-1 rounded-full border border-accent/40 bg-accent/10 px-3 py-1 text-accent/80">
                   <ArrowUpRight className="h-3 w-3" aria-hidden="true" />
-                  Amplify
+                  4Meme
                 </span>
                 <span className="inline-flex items-center gap-1 rounded-full border border-white/20 bg-white/5 px-3 py-1 text-slate-200">
-                  Retune
+                  AI Oracle
                 </span>
               </div>
             </div>

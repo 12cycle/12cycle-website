@@ -41,15 +41,16 @@ export function ChartSection() {
           }
         >
           <span className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-primary/80">
-            Live Chart
+            Liquidity Telemetry
           </span>
           <h2 className="mt-5 text-balance text-3xl font-semibold text-white sm:text-4xl">
-            Monitor {TOKEN_SYMBOL} liquidity in real-time
+            Track the 4Meme bonding curve and PancakeSwap migration
           </h2>
           <p className="mt-5 text-base text-slate-300 sm:text-lg">
-            Dexscreener&apos;s embedded chart lets you monitor price action, depth, and
-            volume as the 12Cycle loops activate. For the latest liquidity movements, open
-            the full chart in a separate tab.
+            The whitepaper highlights how {TOKEN_SYMBOL} launches via the 4Meme bonding
+            curve before sliding into public pools. Use the embedded Dexscreener feed to
+            watch depth, volume, and price discovery as the Genesis &amp; Fair Launch phase
+            unfolds.
           </p>
           <a
             href={EXTERNAL_LINKS.dexscreener.href}
@@ -57,7 +58,7 @@ export function ChartSection() {
             rel="noreferrer"
             className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-primary transition hover:text-primary/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
           >
-            View on Dexscreener
+            Open Dexscreener listing
             <ExternalLink className="h-4 w-4" aria-hidden="true" />
           </a>
         </motion.div>

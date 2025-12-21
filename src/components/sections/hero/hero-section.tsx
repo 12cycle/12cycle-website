@@ -132,15 +132,16 @@ export function HeroSection() {
                 aria-hidden="true"
                 className="h-6 w-6 rounded-full object-cover"
               />
-              <span className="tracking-[0.35em]">{SITE_NAME} Protocol</span>
+              <span className="tracking-[0.35em]">{SITE_NAME} Proof of Culture</span>
             </span>
             <h1 className="text-balance text-4xl font-semibold leading-tight sm:text-5xl md:text-6xl">
-              Liquidity cycling that keeps the ecosystem moving
+              Proof of Culture turns destiny into digital capital
             </h1>
             <p className="mx-auto max-w-3xl text-pretty text-base text-slate-300 sm:text-lg">
-              Shape the future of on-chain liquidity loops with {SITE_NAME}. We&apos;re
-              launching a cinematic landing experience that reveals protocol stats, the
-              12-cycle mechanics, and the roadmap powering the {TOKEN_SYMBOL} community.
+              {SITE_NAME} reinterprets the Eastern Zodiac and Western star houses on-chain,
+              minting soulbound destiny profiles and rewarding every cultural contribution
+              with {TOKEN_SYMBOL}. Dive into the GitBook to see how identity, liquidity,
+              and lore sync on BNB Chain.
             </p>
           </motion.div>
 
@@ -166,26 +167,26 @@ export function HeroSection() {
 
             <div className="flex flex-col flex-wrap items-center justify-center gap-3 sm:flex-row">
               <motion.a
-                href={EXTERNAL_LINKS.pancakeswap.href}
+                href={EXTERNAL_LINKS.whitepaper.href}
                 target="_blank"
                 rel="noreferrer"
                 className="group inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/30 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
                 whileHover={prefersReducedMotion ? undefined : { y: -4, scale: 1.02 }}
                 whileTap={prefersReducedMotion ? undefined : { scale: 0.98 }}
               >
-                Buy on PancakeSwap
+                Read the whitepaper
                 <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
               </motion.a>
 
               <motion.a
-                href={EXTERNAL_LINKS.dexscreener.href}
+                href={EXTERNAL_LINKS.fourMeme.href}
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-slate-900/60 px-6 py-3 text-sm font-semibold text-slate-100 transition hover:border-primary/60 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
                 whileHover={prefersReducedMotion ? undefined : { y: -3, scale: 1.01 }}
                 whileTap={prefersReducedMotion ? undefined : { scale: 0.99 }}
               >
-                View Live Chart
+                Join the 4Meme fair launch
                 <ExternalLink className="h-4 w-4" />
               </motion.a>
 

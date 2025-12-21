@@ -17,8 +17,9 @@ Run this checklist before each release candidate cut. Verify items on both deskt
 
 1. Hero gradient fills viewport, CTA buttons align center, glass card blur renders.
 2. Grid sections (Key Stats, Tokenomics, How To Buy) retain 12/6/3-column layouts at ≥1280px and collapse cleanly on mobile.
-3. Chart iframe maintains 16:9 aspect and scrolls independently on small screens.
-4. Footer disclaimer text readable in dark mode; skip-link focus ring visible when tabbing.
+3. Architecture cards stay aligned on desktop and collapse cleanly on mobile without clipping copy.
+4. Chart embed retains the rounded frame, skeleton overlay, and 16:9-ish aspect without triggering scrollbars on mobile.
+5. Footer disclaimer text readable in dark mode; skip-link focus ring visible when tabbing.
 
 ## Navigation & Interaction
 
@@ -29,9 +30,10 @@ Run this checklist before each release candidate cut. Verify items on both deskt
 
 ## Embeds & External Integrations
 
-1. Dexscreener chart loads, transitions from skeleton to iframe, and external link opens new tab.
-2. X/Twitter embed populates timeline; on rate-limit, fallback card displays with Visit button.
-3. Clipboard toast and IntersectionObserver still function when DevTools throttling is enabled (Slow 3G profile).
+1. Hero CTAs for GitBook and 4Meme open in new tabs and announce focus outlines.
+2. Proof of Culture cards animate on hover without shifting layout; governance callouts remain keyboard accessible.
+3. Dexscreener iframe transitions from skeleton to live chart and “View on Dexscreener” opens in a new tab.
+4. Clipboard toast and IntersectionObserver still function when DevTools throttling is enabled (Slow 3G profile).
 
 ## Accessibility Checks
 
@@ -43,7 +45,7 @@ Run this checklist before each release candidate cut. Verify items on both deskt
 ## Console & Network
 
 - Console free of errors/warnings in every tested browser.
-- Network tab: no 404s for `/og-image.png`, `/scripts/twitter-widget.js`, or favicons.
+- Network tab: no 404s for `/og-image.png`, `/logo-icon.png`, or GitBook references.
 
 ## Known Issues / Follow-ups
 

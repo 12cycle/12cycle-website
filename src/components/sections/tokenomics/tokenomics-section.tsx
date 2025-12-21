@@ -47,15 +47,15 @@ export function TokenomicsSection() {
     >
       <div className="mx-auto max-w-3xl text-center">
         <p className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-primary/80">
-          Tokenomics
+          Token Economy
         </p>
         <h2 className="mt-5 text-balance text-3xl font-semibold text-white sm:text-4xl">
-          Distribution designed for sustainable momentum
+          Allocation strategy from the 12C whitepaper
         </h2>
         <p className="mt-5 text-base text-slate-300 sm:text-lg">
-          Every {TOKEN_SYMBOL} minted contributes to the rhythm of the 12-cycle
-          engine—balancing liquidity, rewards, protocol runway, and contributor
-          incentives.
+          A 1B {TOKEN_SYMBOL} supply is split between fair-launch liquidity, Proof of
+          Culture rewards, ecosystem growth, and operational runway. Emissions flex based
+          on PoC demand, keeping the loop sustainable.
         </p>
       </div>
 
@@ -203,13 +203,13 @@ export function TokenomicsSection() {
             <div className="flex items-center gap-3 text-primary">
               <PieChart className="h-5 w-5" aria-hidden="true" />
               <span className="font-semibold uppercase tracking-[0.2em]">
-                Cycle Cadence
+                Sustainability Guardrails
               </span>
             </div>
             <p className="text-sm text-slate-400">
-              Allocations unlock progressively as each cycle milestone is met. Liquidity
-              and reward tranches synchronize with on-chain volume to avoid sell pressure
-              spikes.
+              Fair Launch mechanics, PoC multipliers, and council-controlled reserves give
+              the protocol levers to defend against dumping while rewarding true cultural
+              contributors.
             </p>
           </div>
         </motion.div>

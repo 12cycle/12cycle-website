@@ -3,12 +3,15 @@ import { type ComponentType } from 'react'
 export type SectionId =
   | 'hero'
   | 'stats'
-  | 'about'
+  | 'ecosystem'
+  | 'architecture'
   | 'tokenomics'
-  | 'how-to-buy'
   | 'chart'
-  | 'community'
+  | 'poc-flow'
+  | 'governance'
   | 'roadmap'
+  | 'team'
+  | 'legal'
 
 export type SectionMeta = {
   id: SectionId
@@ -17,7 +20,7 @@ export type SectionMeta = {
   description?: string
 }
 
-export type ExternalLinkId = 'fourMeme' | 'dexscreener' | 'x' | 'pancakeswap'
+export type ExternalLinkId = 'fourMeme' | 'dexscreener' | 'x' | 'pancakeswap' | 'whitepaper'
 
 export type ExternalLink = {
   id: ExternalLinkId
@@ -69,5 +72,23 @@ export type RoadmapStage = {
   description: string
   quarter: string
   status: RoadmapStatus
+  items: string[]
+}
+
+export type TeamRole = {
+  id: string
+  title: string
+  description: string
+}
+
+export type Partner = {
+  id: string
+  label: string
+  description: string
+}
+
+export type LegalSection = {
+  id: string
+  title: string
   items: string[]
 }

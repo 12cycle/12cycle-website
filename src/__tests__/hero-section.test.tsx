@@ -28,14 +28,13 @@ describe('HeroSection', () => {
     expect(
       screen.getByRole('heading', {
         level: 1,
-        name: /liquidity cycling that keeps the ecosystem moving/i,
+        name: /proof of culture turns destiny into digital capital/i,
       }),
     ).toBeInTheDocument()
     expect(screen.getByRole('button', { name: /copy contract/i })).toBeInTheDocument()
-    expect(screen.getByRole('link', { name: /buy on pancakeswap/i })).toHaveAttribute(
-      'href',
-      expect.stringContaining('pancakeswap'),
-    )
+    expect(
+      screen.getByRole('link', { name: /read the whitepaper/i }),
+    ).toHaveAttribute('href', expect.stringContaining('gitbook'))
   })
 
   it('copies contract address and shows toast', async () => {

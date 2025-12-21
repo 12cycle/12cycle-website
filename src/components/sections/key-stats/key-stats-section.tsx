@@ -1,15 +1,15 @@
 import { Fragment } from 'react'
 import { motion, useReducedMotion } from 'framer-motion'
-import { Activity, BarChart3, Network, ShieldCheck } from 'lucide-react'
+import { Fingerprint, Gavel, Rocket, Sparkles } from 'lucide-react'
 import { PageGrid, SectionContainer } from '@/components/layout'
 import { KEY_STATS } from '@/lib/constants'
 import { cn } from '@/lib/utils'
 
 const ICON_MAP = {
-  chain: Network,
-  liquidity: BarChart3,
-  supply: Activity,
-  security: ShieldCheck,
+  identity: Fingerprint,
+  destiny: Sparkles,
+  launch: Rocket,
+  governance: Gavel,
 } as const
 
 const CARD_VARIANTS = {
@@ -36,17 +36,18 @@ export function KeyStatsSection() {
     >
       <div className="mx-auto max-w-3xl text-center">
         <h2 className="text-balance text-3xl font-semibold text-white sm:text-4xl">
-          Transparency for every cycle
+          Signals carried forward from the whitepaper
         </h2>
         <p className="mt-4 text-base text-slate-300 sm:text-lg">
-          The 12Cycle dashboard surfaces the on-chain context you need—chain availability,
-          liquidity health, supply distribution, and third-party verifications.
+          Identity, incentives, launch mechanics, and governance are all defined in the
+          GitBook. These highlights summarize how Proof of Culture becomes a living
+          protocol.
         </p>
       </div>
 
       <PageGrid className="grid-cols-1 md:grid-cols-12">
         {KEY_STATS.map((stat, index) => {
-          const Icon = ICON_MAP[stat.id as keyof typeof ICON_MAP] ?? Network
+          const Icon = ICON_MAP[stat.id as keyof typeof ICON_MAP] ?? Sparkles
 
           return (
             <motion.article
@@ -100,8 +101,8 @@ export function KeyStatsSection() {
 
       <div className="mx-auto max-w-2xl rounded-2xl border border-white/10 bg-slate-950/50 px-6 py-6 text-center text-sm text-slate-400 backdrop-blur">
         <p>
-          Real-time metrics will sync as soon as liquidity loops go live. For now, follow
-          our public channels for deployment milestones and audit disclosures.
+          Live dashboards will arrive with the 12C Compass dApp. Until then, reference the
+          public resources below for the most current launch and governance notes.
         </p>
         <div className="mt-4 flex flex-wrap justify-center gap-4 text-primary">
           {KEY_STATS.filter((stat) => stat.href && stat.hrefLabel).map((stat) => (
